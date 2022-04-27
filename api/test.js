@@ -11,6 +11,7 @@ var expect = chai.expect
 chai.use(chaiHttp);
 
 describe('Posts', () => {
+  
   describe('/GET posts', () => {
     it('it should GET all the posts', (done) => {
       chai.request(server)
@@ -22,28 +23,43 @@ describe('Posts', () => {
         });
     });
   });
-  describe('/POST post', () => {
-    it('it should not POST a post without all fields', (done) => {
-      let post = {
-        username: "hemanth",
-            userid: "61dc1a6eac4067b7e23aca57",
-            title: "test",
-            desc: "this is to test the deployed",
-            categories: "Others",
-      }
+  
+  // describe('/POST post', () => {
+  //   it('it should not POST a post without all fields', (done) => {
+  //     let post = {
+  //       username: "hemanth",
+  //           userid: "61dc1a6eac4067b7e23aca57",
+  //           title: "test",
+  //           desc: "this is to test the deployed",
+  //           categories: "Others",
+  //     }
+  //     chai.request(server)
+  //       .post('/api/posts/')
+  //       .send(post)
+  //       .end((err, res) => {
+  //         res.should.have.status(500);
+  //         res.body.should.be.a('object');
+  //         done();
+  //       });
+  //   });
+  // });
+});
+
+
+
+describe('Event', () => {
+  describe('/GET event', () => {
+    it('it should GET all events', (done) => {
       chai.request(server)
-        .post('/api/posts/')
-        .send(post)
+        .get('/api/events')
         .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.be.a('object');
+          res.should.have.status(200);
+          res.body.should.be.a('array');
           done();
         });
     });
   });
 });
-
-
 
 
 
