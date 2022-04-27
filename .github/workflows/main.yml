@@ -16,4 +16,5 @@ jobs:
         run: |
           cd api
           npm ci
+          npm start
           npm run test
