@@ -4,7 +4,7 @@ let mongoose = require("mongoose");
 
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('./index');
+let server = 'localhost:5000';
 let should = chai.should();
 var expect = chai.expect
 
