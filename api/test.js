@@ -4,7 +4,7 @@ let mongoose = require("mongoose");
 
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = 'localhost:5000';
+let server = 'http://localhost:5000/api';
 let should = chai.should();
 var expect = chai.expect
 
@@ -50,8 +50,9 @@ chai.use(chaiHttp);
 describe('Event', () => {
   describe('/GET event', () => {
     it('it should GET all events', (done) => {
-      chai.request(server)
-        .get('/api/events')
+      chai
+        .request(server)
+        .get('/events')
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('array');
@@ -67,7 +68,7 @@ describe('User', () => {
   describe('/GET user', () => {
     it('it should GET all users', (done) => {
       chai.request(server)
-        .get('/api/users')
+        .get('/users')
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('array');
