@@ -19,7 +19,7 @@ const SinglePost = () => {
   const [txtcomment,setTxtcomment]=useState([]);
   const [authorcomment,setAuthorcomment]=useState([]);
   //fetching image from local host
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://aqueous-coast-70292.herokuapp.com/images/"
   //fetching user from context
   const {user} = useContext(Context)
 

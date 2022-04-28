@@ -90,7 +90,7 @@ export default function Add() {
                 <div className="addFormPara">
                     <textarea type="text" name="para" placeholder="Begin Your Story..." className="addText" onChange={(e) => setDesc(e.target.value)}></textarea>
                 </div>
-                <button className="addSubmit" type="submit"> Publish </button>
+                <button className="addSubmit" type="submit"> Publish it </button>
             </form>
         </div>
         <Footer />
